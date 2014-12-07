@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get '/' => 'image#index'
   get '/images' => 'image#index'
   get '/images/show' => 'image#show'
   # The priority is based upon order of creation: first created -> highest priority.
