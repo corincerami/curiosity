@@ -1,5 +1,8 @@
 <% @images.each do |image| %>
-  <div>
-    <img src='<%= image[:img_src] %>'/>
+  <div class="row">
+    <div class='small-8 columns.centered'>
+      <%= image[:camera] %>
+      <img src='<%= image[:img_src] %>'/>
+    </div>
   </div>
 <% end %>

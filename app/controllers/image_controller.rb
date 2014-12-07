@@ -4,8 +4,7 @@ class ImageController < ApplicationController
   end
 
   def index
-    @images = Image.all
     # find the martial solar date of the most recent image taken
-    @most_recent = @images.sort_by { |hash| -hash[:sol].to_i }.first[:sol]
+    @most_recent = Image.all.sort_by { |hash| -hash[:sol].to_i }.first[:sol]
   end
 end
