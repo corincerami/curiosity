@@ -1,9 +1,11 @@
 class ImageController < ApplicationController
   def show
-    @image = image.find_by(:id)
+    @images = Image.where(sol: params[:sol])
   end
 
   def index
     @images = Image.all
+    # find the martial solar date of the most recent image taken
+    @most_recent = @images.sort_by { |hash| -hash[:sol].to_i }.first[:sol]
   end
 end

@@ -1,3 +1,8 @@
-<% @images.each do |image| %>
-  <img src="<%= image[:img_src] %>"/>
-<% end %>
+<p>
+  NASA's Mars rover Curiosity landed on the Martian surface on August 6, 2012, and has spent the last <%= @most_recent %> sols (Martian days) exploring the red planet.  You can enter a Martian sol below from anywhere between 1 and <%= @most_recent %> to see all of the photos that were taken during that solar cycle.
+</p>
+
+<form action='/images/show' method='get'>
+  <input type='text' name='sol' placeholder='Enter a Martian sol'>
+  <input type='submit' value='Submit'>
+</form>
